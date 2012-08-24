@@ -24,7 +24,8 @@
 struct task_struct *scan_job_man_thread;
 
 /* we actually want to initialize this as locked ... */
-spinlock_t scan_job_man_thread_lock = SPIN_LOCK_UNLOCKED;
+//spinlock_t scan_job_man_thread_lock = SPIN_LOCK_UNLOCKED;
+DEFINE_SPINLOCK(scan_job_man_thread_lock);
 
 /* mutex used to make sure the module doesn't
  * unload itsself before the kernel-thread has
